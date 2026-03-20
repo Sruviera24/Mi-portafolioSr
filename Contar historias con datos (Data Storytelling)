@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Data Storytelling | Nick Matos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* SECCIONES */
+.section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+  transition: background 1s;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1.2rem;
+  max-width: 600px;
+}
+
+/* EFECTO */
+.fade {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* KPI */
+.kpi {
+  font-size: 4rem;
+  color: #22c55e;
+  margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="section fade" style="background:#020617">
+  <h1>📊 El Problema</h1>
+  <p>Las empresas pierden dinero sin saber exactamente por qué...</p>
+</div>
+
+<div class="section fade" style="background:#020617">
+  <h1>💸 Ingresos Totales</h1>
+  <div class="kpi" id="ingresos">0</div>
+</div>
+
+<div class="section fade" style="background:#111827">
+  <h1>⚠️ El Insight</h1>
+  <p>El 60% de los costos proviene del consumo de combustible.</p>
+</div>
+
+<div class="section fade" style="background:#111827">
+  <h1>📉 Pérdidas</h1>
+  <div class="kpi" id="perdidas">0</div>
+</div>
+
+<div class="section fade" style="background:#020617">
+  <h1>🚀 La Solución</h1>
+  <p>Optimizar rutas reduce costos en un 25%.</p>
+</div>
+
+<div class="section fade" style="background:#020617">
+  <h1>📈 Resultado</h1>
+  <div class="kpi" id="resultado">0</div>
+</div>
+
+<script>
+// SCROLL EFFECT
+const sections = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.classList.add('show');
+    }
+  });
+});
+
+// ANIMACION KPIs
+function animate(id, end) {
+  let el = document.getElementById(id);
+  let start = 0;
+
+  let interval = setInterval(() => {
+    start += Math.ceil(end / 50);
+    el.innerText = start.toLocaleString();
+
+    if (start >= end) {
+      el.innerText = end.toLocaleString();
+      clearInterval(interval);
+    }
+  }, 30);
+}
+
+setTimeout(() => animate("ingresos", 144000000), 1000);
+setTimeout(() => animate("perdidas", 2000000), 2000);
+setTimeout(() => animate("resultado", 180000000), 3000);
+</script>
+
+</body>
+</html>
