@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfil Profesional</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #0a0a0a;
+      color: #ffffff;
+    }
+
+    /* FONDO MINIMALISTA BLANCO Y NEGRO */
+    .background {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 20%, #1a1a1a, #000000);
+      z-index: -2;
+    }
+
+    /* GRID SUTIL (ESTILO DATA PERO ELEGANTE) */
+    .grid {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      z-index: -1;
+    }
+
+    /* CONTENEDOR */
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      backdrop-filter: blur(10px);
+      padding: 50px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 550px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      font-size: 15px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      opacity: 0.7;
+    }
+
+    p {
+      margin-bottom: 30px;
+      line-height: 1.6;
+      color: #d1d1d1;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 30px;
+      transition: 0.3s ease;
+      font-weight: 500;
+      border: 1px solid rgba(255,255,255,0.2);
+      background: transparent;
+    }
+
+    .btn:hover {
+      background: #ffffff;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 25px;
+      font-size: 12px;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- FONDO -->
+  <div class="background"></div>
+  <div class="grid"></div>
+
+  <!-- CONTENIDO -->
+  <div class="container">
+    <h1>Sergio R. Ruviera Matos</h1>
+    <h2>Business Intelligence Analyst | Data Analyst | Power BI • SQL • Python</h2>
+
+    <p>
+      Especialista en análisis de datos enfocado en generar insights de negocio, optimizar procesos comerciales y apoyar la toma de decisiones basada en datos.
+    </p>
+
+    <div class="buttons">
+      <a class="btn" href="https://www.linkedin.com/in/sergio-ricardo-ruviera-matos-78a16a1a4/" target="_blank">
+        LinkedIn
+      </a>
+
+      <a class="btn" href="https://github.com/Sruviera24" target="_blank">
+        GitHub
+      </a>
+    </div>
+
+    <footer>
+      © 2026 - Perfil Profesional
+    </footer>
+  </div>
+
+</body>
+</html>
+
+
